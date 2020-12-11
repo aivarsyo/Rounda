@@ -19,7 +19,7 @@ const Blue = ({ state }) => {
 
   useEffect(() => {
     pinTheSection();
-  });
+  }, []);
 
   return (
     <>

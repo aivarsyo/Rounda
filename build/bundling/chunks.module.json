@@ -2,19 +2,19 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "a4c973de6b33dc1a620b",
+  "hash": "d4930868d89fc3ee1733",
   "publicPath": "/static/",
   "outputPath": "C:\\Users\\Aivars\\Desktop\\Local Sites\\Rounda-node\\build\\static",
   "assetsByChunkName": {
-    "rounda-node": [
-      "rounda-node.module.js",
-      "rounda-node.f4a94589ebaec9a7f76a.hot-update.js"
+    "rounda": [
+      "rounda.module.js",
+      "rounda.9cda935ed238903356f3.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "f4a94589ebaec9a7f76a.hot-update.json",
-      "size": 53,
+      "name": "9cda935ed238903356f3.hot-update.json",
+      "size": 48,
       "chunks": [],
       "chunkNames": [],
       "info": {
@@ -40,6 +40,14 @@
       "emitted": false
     },
     {
+      "name": "images/closeIcon.png",
+      "size": 1296,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "images/logo.png",
       "size": 28172,
       "chunks": [],
@@ -56,13 +64,13 @@
       "emitted": false
     },
     {
-      "name": "rounda-node.f4a94589ebaec9a7f76a.hot-update.js",
-      "size": 17918,
+      "name": "rounda.9cda935ed238903356f3.hot-update.js",
+      "size": 10335,
       "chunks": [
-        "rounda-node"
+        "rounda"
       ],
       "chunkNames": [
-        "rounda-node"
+        "rounda"
       ],
       "info": {
         "hotModuleReplacement": true,
@@ -71,13 +79,13 @@
       "emitted": false
     },
     {
-      "name": "rounda-node.module.js",
-      "size": 6078433,
+      "name": "rounda.module.js",
+      "size": 9084610,
       "chunks": [
-        "rounda-node"
+        "rounda"
       ],
       "chunkNames": [
-        "rounda-node"
+        "rounda"
       ],
       "info": {},
       "emitted": false
@@ -85,26 +93,26 @@
   ],
   "filteredAssets": 0,
   "entrypoints": {
-    "rounda-node": {
+    "rounda": {
       "chunks": [
-        "rounda-node"
+        "rounda"
       ],
       "assets": [
-        "rounda-node.module.js",
-        "rounda-node.f4a94589ebaec9a7f76a.hot-update.js"
+        "rounda.module.js",
+        "rounda.9cda935ed238903356f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
     }
   },
   "namedChunkGroups": {
-    "rounda-node": {
+    "rounda": {
       "chunks": [
-        "rounda-node"
+        "rounda"
       ],
       "assets": [
-        "rounda-node.module.js",
-        "rounda-node.f4a94589ebaec9a7f76a.hot-update.js"
+        "rounda.module.js",
+        "rounda.9cda935ed238903356f3.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

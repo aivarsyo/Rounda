@@ -31,7 +31,7 @@ const Black = ({ state }) => {
   useEffect(() => {
     pinTheSection();
     scrollThePinnedContent();
-  });
+  }, []);
 
   return (
     <>

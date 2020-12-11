@@ -8,13 +8,16 @@ import Footer from "./footer";
 import gangsterRegular from "../fonts/gangstergrotesk-regular.ttf";
 import gangsterLight from "../fonts/gangstergrotesk-light.ttf";
 
-const Theme = ({ state }) => {
+const Theme = ({ state, actions }) => {
+  //console.log(state);
   // Get information about the current URL.
   const data = state.source.get(state.router.link);
+  console.log(data);
 
   return (
     <>
       <Head>
+        <title>{state.frontity.title}</title>
         <meta name="description" content={state.frontity.description} />
         <html lang="en" />
       </Head>
@@ -22,7 +25,9 @@ const Theme = ({ state }) => {
       <Global styles={globalStyles} />
 
       <Header />
-      <Home />
+      <Switch>
+        <Home />
+      </Switch>
       <Footer />
     </>
   );

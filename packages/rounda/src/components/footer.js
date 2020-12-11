@@ -34,7 +34,7 @@ const Footer = ({ state }) => {
 
   useEffect(() => {
     pinTheSection();
-  });
+  }, []);
 
   return (
     <>

@@ -1,12 +1,12 @@
 {
   "name": "rounda",
   "version": "1.0.0",
-  "description": "Rounda theme",
+  "description": "A starter theme for Frontity",
   "keywords": [
     "frontity",
     "frontity-theme"
   ],
-  "homepage": "http://localhost/Rounda",
+  "homepage": "https://aivars.dk/admin.Rounda/",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

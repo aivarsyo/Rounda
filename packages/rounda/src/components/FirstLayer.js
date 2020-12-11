@@ -1,10 +1,66 @@
-import React from "react";
-import { connect, styled } from "frontity";
+import React, { useRef, useEffect } from "react";
+import { connect, styled, css } from "frontity";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const FirstLayer = ({ state }) => {
+  /* console.log(state);
+  const data = state.source.get(state.router.link);
+  console.log(data);
+  const page = state.source[data.type][data.id];
+  console.log(page); */
+
+  const videoSection = useRef(null);
+
+  const pinTheSection = () => {
+    /* footer gets pinned from the very beginning */
+    ScrollTrigger.create({
+      trigger: [videoSection.current],
+      start: "top top",
+      pin: true,
+      pinSpacing: false,
+    });
+  };
+
+  useEffect(() => {
+    pinTheSection();
+  }, []);
+
   return (
     <>
-      <Container></Container>
+      <Container ref={videoSection}>
+        <div
+          css={css`
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+          `}
+        >
+          <iframe
+            src="https://player.vimeo.com/video/133459551?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&muted=1&background=1"
+            css={css`
+              width: 100vw;
+              height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+              min-height: 100vh;
+              min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            `}
+            /* frameborder="0" */
+            allow="autoplay; fullscreen"
+            /* allowfullscreen */
+          ></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+      </Container>
     </>
   );
 };
@@ -14,9 +70,4 @@ export default connect(FirstLayer);
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background-image: url("https://dummyimage.com/1000x800/FFC0CB/fff");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 `;

@@ -1,10 +1,10 @@
 const settings = {
-  name: "rounda-node",
+  name: "rounda",
   state: {
     frontity: {
-      url: "http://localhost/Rounda",
+      url: "https://aivars.dk/admin.Rounda/",
       title: "Rounda",
-      description: "Rounda",
+      description: "Digital Agency",
     },
   },
   packages: [
@@ -12,25 +12,26 @@ const settings = {
       name: "rounda",
       state: {
         theme: {
+          autoPrefetch: "hover",
           menu: [
             ["Home", "/"],
-            ["Nature", "/category/nature/"],
-            ["Travel", "/category/travel/"],
-            ["Japan", "/tag/japan/"],
-            ["About Us", "/about-us/"],
+            ["Test Page", "/test-page"],
           ],
           featured: {
-            showOnList: false,
-            showOnPost: false,
+            showOnList: true,
+            showOnPost: true,
           },
         },
       },
     },
     {
       name: "@frontity/wp-source",
+      active: true,
       state: {
         source: {
-          url: "http://localhost/Rounda",
+          api: "https://aivars.dk/admin.Rounda/wp-json",
+          homepage: "/home",
+          postsPage: "/test-page",
         },
       },
     },
