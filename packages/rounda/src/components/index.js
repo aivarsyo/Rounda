@@ -4,15 +4,20 @@ import Switch from "@frontity/components/switch";
 import Header from "./header";
 import Home from "./home";
 import Footer from "./footer";
+import Works from "./works";
+import Empty from "./empty";
 
 import gangsterRegular from "../fonts/gangstergrotesk-regular.ttf";
 import gangsterLight from "../fonts/gangstergrotesk-light.ttf";
 
 const Theme = ({ state, actions }) => {
   //console.log(state);
-  // Get information about the current URL.
   const data = state.source.get(state.router.link);
-  console.log(data);
+  //console.log(data);
+  //const page = state.source[data.type][data.id];
+  //console.log(page);
+  //const content = page.acf;
+  //console.log(content);
 
   return (
     <>
@@ -26,7 +31,9 @@ const Theme = ({ state, actions }) => {
 
       <Header />
       <Switch>
-        <Home />
+        <Home when={data.isHome} />
+        {/* <Empty when={data.id == 35} /> */}
+        <Works when={data.id == 35 && data.isReady} />
       </Switch>
       <Footer />
     </>

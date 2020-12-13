@@ -5,10 +5,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Black = ({ state }) => {
+  //console.log(state);
+  const data = state.source.get(state.router.link);
+  //console.log(data);
+  const page = state.source[data.type][data.id];
+  //console.log(page);
+  const content = page.acf;
+  //console.log(content);
+
   const blackSection = useRef(null);
 
+  let pinTrigger;
+  let scrollPin;
+
   const pinTheSection = () => {
-    ScrollTrigger.create({
+    pinTrigger = ScrollTrigger.create({
       trigger: [blackSection.current],
       start: "bottom bottom",
       pin: true,
@@ -17,7 +28,7 @@ const Black = ({ state }) => {
   };
 
   const scrollThePinnedContent = () => {
-    gsap.to([blackSection.current.children], {
+    scrollPin = gsap.to([blackSection.current.children], {
       yPercent: -50,
       ease: "none",
       scrollTrigger: {
@@ -31,26 +42,28 @@ const Black = ({ state }) => {
   useEffect(() => {
     pinTheSection();
     scrollThePinnedContent();
-  }, []);
+
+    pinTrigger.refresh();
+    scrollPin.scrollTrigger.refresh();
+
+    return () => {
+      pinTrigger.kill();
+      scrollPin.kill();
+      scrollPin.scrollTrigger.kill();
+    };
+  }, [data]);
 
   return (
     <>
       <Container ref={blackSection}>
         <div>
-          <p>
-            Rounda is an an independent UI/UX design and branding agency based
-            in Copenhagen.
-          </p>
+          <p>{content.title_1}</p>
         </div>
 
         <div>
-          <img src="https://dummyimage.com/400x600/5438D5/fff" />
-          <p>
-            As a full-service UX design agency, we work closely with our clients
-            to define, design and develop transformative user experiences across
-            all platforms and brand’s touchpoints.
-          </p>
-          <p>Message can not be blocked.</p>
+          <img src={content.image_1} />
+          <p>{content.title_2}</p>
+          <p>{content.paragraph_1}</p>
         </div>
       </Container>
     </>

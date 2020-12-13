@@ -36,10 +36,6 @@ const Header = ({ state }) => {
     document.querySelector(".menu").style.zIndex = "-2";
   };
 
-  useEffect(() => {
-    //showMenu();
-  }, []);
-
   return (
     <>
       <Global styles={globalStyles} />
@@ -92,7 +88,7 @@ const Header = ({ state }) => {
             padding-right: 10vw;
           `}
         >
-          <Link href="/work">Work</Link>
+          <Link href="/works">Works</Link>
           <Link href="/about">About us</Link>
           <Link href="/services">Services</Link>
         </div>

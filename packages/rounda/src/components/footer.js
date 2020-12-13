@@ -6,18 +6,23 @@ import logo from "../images/logo.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Footer = ({ state }) => {
+  const data = state.source.get(state.router.link);
+
   const yellowSection = useRef(null);
+
+  let pinTrigger;
+  let scrollPin;
 
   const pinTheSection = () => {
     /* footer gets pinned from the very beginning */
-    ScrollTrigger.create({
+    pinTrigger = ScrollTrigger.create({
       trigger: [yellowSection.current],
       start: "bottom bottom",
       pin: true,
       pinSpacing: false,
     });
 
-    gsap.to([yellowSection.current], {
+    scrollPin = gsap.to([yellowSection.current], {
       /* just before the footer is revealed, it changes
         its position to fixed, just so it
         doesn't hide under the content
@@ -32,9 +37,16 @@ const Footer = ({ state }) => {
     });
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     pinTheSection();
-  }, []);
+    pinTrigger.refresh();
+
+    return () => {
+      pinTrigger.kill();
+      scrollPin.kill();
+      console.log("link changed");
+    };
+  }, [data]); */
 
   return (
     <>

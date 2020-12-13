@@ -5,27 +5,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const FirstLayer = ({ state }) => {
-  /* console.log(state);
+  //console.log(state);
   const data = state.source.get(state.router.link);
-  console.log(data);
+  //console.log(data);
   const page = state.source[data.type][data.id];
-  console.log(page); */
+  //console.log(page);
+  const content = page.acf;
+  //console.log(content);
 
   const videoSection = useRef(null);
 
+  let pinTrigger;
+
   const pinTheSection = () => {
     /* footer gets pinned from the very beginning */
-    ScrollTrigger.create({
+    pinTrigger = ScrollTrigger.create({
       trigger: [videoSection.current],
       start: "top top",
       pin: true,
       pinSpacing: false,
     });
+    console.log("start");
   };
 
   useEffect(() => {
     pinTheSection();
-  }, []);
+
+    pinTrigger.refresh();
+
+    return () => {
+      pinTrigger.kill();
+    };
+  }, [data]);
 
   return (
     <>
@@ -43,7 +54,7 @@ const FirstLayer = ({ state }) => {
           `}
         >
           <iframe
-            src="https://player.vimeo.com/video/133459551?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&muted=1&background=1"
+            src={`https://player.vimeo.com/video/${content.introduction_video}?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&muted=1&background=1`}
             css={css`
               width: 100vw;
               height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */

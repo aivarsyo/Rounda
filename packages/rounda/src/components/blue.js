@@ -5,10 +5,20 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Blue = ({ state }) => {
+  //console.log(state);
+  const data = state.source.get(state.router.link);
+  //console.log(data);
+  const page = state.source[data.type][data.id];
+  //console.log(page);
+  const content = page.acf;
+  //console.log(content);
+
   const blueSection = useRef(null);
 
+  let pinTrigger;
+
   const pinTheSection = () => {
-    ScrollTrigger.create({
+    pinTrigger = ScrollTrigger.create({
       trigger: [blueSection.current],
       start: "top top",
       end: "top +=100%",
@@ -19,46 +29,43 @@ const Blue = ({ state }) => {
 
   useEffect(() => {
     pinTheSection();
-  }, []);
+
+    pinTrigger.refresh();
+
+    return () => {
+      pinTrigger.kill();
+    };
+  }, [data]);
 
   return (
     <>
       <Container ref={blueSection}>
         <div>
-          <img src="https://dummyimage.com/600x400/5538d5/fff" />
-          <p>
-            I have looked over your internship report draft and added some
-            comments.
-          </p>
+          <img src={content.image_2} />
+          <p>{content.paragraph_2}</p>
         </div>
 
         <div>
-          <p>
-            By applying behavioral science to customer experience, we design
-            engaging digital products used by millions of people.
-          </p>
+          <p>{content.title_3}</p>
         </div>
 
         <div>
-          <img src="https://dummyimage.com/600x400/5538d5/fff" />
-          <p>I have looked over your internship report draft and added some.</p>
+          <img src={content.image_3} />
+          <p>{content.paragraph_3}</p>
         </div>
 
         <div>
-          <p>
-            We create human-centered enterprise software that has the polished,
-            snappy feel of the best consumer apps.
-          </p>
+          <p>{content.title_4}</p>
         </div>
 
         <div>
-          <img src="https://dummyimage.com/400x600/5438D5/fff" />
-          <p>Your internship report draft and added some.</p>
+          <img src={content.image_4} />
+          <p>{content.paragraph_4}</p>
         </div>
 
         <div>
-          <img src="https://dummyimage.com/400x600/5438D5/fff" />
-          <p>We work with both global and local companies and actors</p>
+          <img src={content.image_5} />
+          <p>{content.paragraph_5}</p>
         </div>
       </Container>
     </>

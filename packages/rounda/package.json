@@ -6,7 +6,7 @@
     "frontity",
     "frontity-theme"
   ],
-  "homepage": "https://aivars.dk/admin.Rounda/",
+  "homepage": "http://localhost/Rounda/",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
