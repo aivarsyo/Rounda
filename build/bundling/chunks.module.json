@@ -2,27 +2,13 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "9d33636c1eeec8b0ef8e",
+  "hash": "88884c7ca0a842f38426",
   "publicPath": "/static/",
   "outputPath": "C:\\Users\\Aivars\\Desktop\\Local Sites\\Rounda-node\\build\\static",
   "assetsByChunkName": {
-    "rounda": [
-      "rounda.module.js",
-      "rounda.e22a5eb1d40c8df38bde.hot-update.js"
-    ]
+    "rounda": "rounda.module.js"
   },
   "assets": [
-    {
-      "name": "e22a5eb1d40c8df38bde.hot-update.json",
-      "size": 48,
-      "chunks": [],
-      "chunkNames": [],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
     {
       "name": "fonts/gangstergrotesk-light.ttf",
       "size": 56340,
@@ -64,21 +50,6 @@
       "emitted": false
     },
     {
-      "name": "rounda.e22a5eb1d40c8df38bde.hot-update.js",
-      "size": 15274,
-      "chunks": [
-        "rounda"
-      ],
-      "chunkNames": [
-        "rounda"
-      ],
-      "info": {
-        "hotModuleReplacement": true,
-        "immutable": true
-      },
-      "emitted": false
-    },
-    {
       "name": "rounda.module.js",
       "size": 9101633,
       "chunks": [
@@ -98,8 +69,7 @@
         "rounda"
       ],
       "assets": [
-        "rounda.module.js",
-        "rounda.e22a5eb1d40c8df38bde.hot-update.js"
+        "rounda.module.js"
       ],
       "children": {},
       "childAssets": {}
@@ -111,8 +81,7 @@
         "rounda"
       ],
       "assets": [
-        "rounda.module.js",
-        "rounda.e22a5eb1d40c8df38bde.hot-update.js"
+        "rounda.module.js"
       ],
       "children": {},
       "childAssets": {}
