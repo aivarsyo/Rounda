@@ -7,6 +7,8 @@ import Link from "./link";
 import gsap from "gsap";
 
 const Header = ({ state }) => {
+  const data = state.source.get(state.router.link);
+
   const menu = useRef(null);
   const overlayMenu = useRef(null);
 
@@ -36,6 +38,12 @@ const Header = ({ state }) => {
     document.querySelector(".menu").style.zIndex = "-2";
   };
 
+  useEffect(() => {
+    return () => {
+      hideMenu();
+    };
+  }, [data]);
+
   return (
     <>
       <Global styles={globalStyles} />
@@ -55,7 +63,7 @@ const Header = ({ state }) => {
           top: 34px;
           right: 20px;
           cursor: pointer;
-          z-index: 1;
+          z-index: 2;
         `}
         onClick={showMenu}
       >

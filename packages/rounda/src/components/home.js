@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import Black from "./black";
 import FirstLayer from "./FirstLayer";
 import Blue from "./blue";
+import Footer from "./footer";
 
 const Home = ({ state }) => {
   return (
@@ -12,6 +13,7 @@ const Home = ({ state }) => {
         <Black />
         <Blue />
       </Container>
+      <Footer />
     </>
   );
 };

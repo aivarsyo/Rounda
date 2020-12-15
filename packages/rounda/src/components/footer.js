@@ -10,19 +10,17 @@ const Footer = ({ state }) => {
 
   const yellowSection = useRef(null);
 
-  let pinTrigger;
-  let scrollPin;
-
   const pinTheSection = () => {
     /* footer gets pinned from the very beginning */
-    pinTrigger = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: [yellowSection.current],
       start: "bottom bottom",
       pin: true,
       pinSpacing: false,
+      scrub: true,
     });
 
-    scrollPin = gsap.to([yellowSection.current], {
+    gsap.to([yellowSection.current], {
       /* just before the footer is revealed, it changes
         its position to fixed, just so it
         doesn't hide under the content
@@ -37,16 +35,24 @@ const Footer = ({ state }) => {
     });
   };
 
-  /* useEffect(() => {
+  useEffect(() => {
     pinTheSection();
-    pinTrigger.refresh();
+
+    setTimeout(function () {
+      let triggers = ScrollTrigger.getAll();
+
+      triggers.forEach((trigger) => {
+        trigger.refresh();
+      });
+    }, 1000);
 
     return () => {
-      pinTrigger.kill();
-      scrollPin.kill();
-      console.log("link changed");
+      let triggers = ScrollTrigger.getAll();
+      triggers.forEach((trigger) => {
+        trigger.kill();
+      });
     };
-  }, [data]); */
+  }, [data]);
 
   return (
     <>
@@ -89,6 +95,7 @@ const Container = styled.footer`
   bottom: 0;
   left: 0;
   z-index: -1;
+  position: static;
 
   img {
     width: 40vw;

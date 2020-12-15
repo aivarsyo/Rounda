@@ -15,11 +15,8 @@ const Black = ({ state }) => {
 
   const blackSection = useRef(null);
 
-  let pinTrigger;
-  let scrollPin;
-
   const pinTheSection = () => {
-    pinTrigger = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: [blackSection.current],
       start: "bottom bottom",
       pin: true,
@@ -28,7 +25,7 @@ const Black = ({ state }) => {
   };
 
   const scrollThePinnedContent = () => {
-    scrollPin = gsap.to([blackSection.current.children], {
+    gsap.to([blackSection.current.children], {
       yPercent: -50,
       ease: "none",
       scrollTrigger: {
@@ -42,16 +39,7 @@ const Black = ({ state }) => {
   useEffect(() => {
     pinTheSection();
     scrollThePinnedContent();
-
-    pinTrigger.refresh();
-    scrollPin.scrollTrigger.refresh();
-
-    return () => {
-      pinTrigger.kill();
-      scrollPin.kill();
-      scrollPin.scrollTrigger.kill();
-    };
-  }, [data]);
+  }, []);
 
   return (
     <>

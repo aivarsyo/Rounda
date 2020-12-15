@@ -3,9 +3,9 @@ import { Global, css, connect, styled, Head } from "frontity";
 import Switch from "@frontity/components/switch";
 import Header from "./header";
 import Home from "./home";
-import Footer from "./footer";
 import Works from "./works";
 import Empty from "./empty";
+import About from "./about";
 
 import gangsterRegular from "../fonts/gangstergrotesk-regular.ttf";
 import gangsterLight from "../fonts/gangstergrotesk-light.ttf";
@@ -34,8 +34,8 @@ const Theme = ({ state, actions }) => {
         <Home when={data.isHome} />
         {/* <Empty when={data.id == 35} /> */}
         <Works when={data.id == 35 && data.isReady} />
+        <About when={data.id == 53 && data.isReady} />
       </Switch>
-      <Footer />
     </>
   );
 };
@@ -60,5 +60,9 @@ const globalStyles = css`
 
   p::selection {
     background-color: #f7f7a8;
+  }
+
+  iframe {
+    border: none;
   }
 `;

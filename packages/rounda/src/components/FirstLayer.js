@@ -3,6 +3,8 @@ import { connect, styled, css } from "frontity";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import Script from "@frontity/components/script";
+import Iframe from "@frontity/components/iframe";
 
 const FirstLayer = ({ state }) => {
   //console.log(state);
@@ -15,28 +17,18 @@ const FirstLayer = ({ state }) => {
 
   const videoSection = useRef(null);
 
-  let pinTrigger;
-
   const pinTheSection = () => {
-    /* footer gets pinned from the very beginning */
-    pinTrigger = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: [videoSection.current],
       start: "top top",
       pin: true,
       pinSpacing: false,
     });
-    console.log("start");
   };
 
   useEffect(() => {
     pinTheSection();
-
-    pinTrigger.refresh();
-
-    return () => {
-      pinTrigger.kill();
-    };
-  }, [data]);
+  }, []);
 
   return (
     <>
@@ -53,7 +45,7 @@ const FirstLayer = ({ state }) => {
             overflow: hidden;
           `}
         >
-          <iframe
+          <Iframe
             src={`https://player.vimeo.com/video/${content.introduction_video}?autoplay=1&loop=1&color=ffffff&title=0&byline=0&portrait=0&muted=1&background=1`}
             css={css`
               width: 100vw;
@@ -66,11 +58,11 @@ const FirstLayer = ({ state }) => {
               transform: translate(-50%, -50%);
             `}
             /* frameborder="0" */
-            allow="autoplay; fullscreen"
+            /* allow="autoplay; fullscreen" */
             /* allowfullscreen */
-          ></iframe>
+          />
         </div>
-        <script src="https://player.vimeo.com/api/player.js"></script>
+        <Script src="https://player.vimeo.com/api/player.js" />
       </Container>
     </>
   );

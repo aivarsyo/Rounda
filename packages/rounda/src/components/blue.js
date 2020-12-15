@@ -15,10 +15,8 @@ const Blue = ({ state }) => {
 
   const blueSection = useRef(null);
 
-  let pinTrigger;
-
   const pinTheSection = () => {
-    pinTrigger = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: [blueSection.current],
       start: "top top",
       end: "top +=100%",
@@ -29,13 +27,7 @@ const Blue = ({ state }) => {
 
   useEffect(() => {
     pinTheSection();
-
-    pinTrigger.refresh();
-
-    return () => {
-      pinTrigger.kill();
-    };
-  }, [data]);
+  }, []);
 
   return (
     <>
