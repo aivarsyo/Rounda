@@ -18,14 +18,14 @@ const About = ({ state }) => {
   return (
     <>
       <Container className="black">
-        <p
+        <div
           css={css`
             align-self: flex-end;
             width: 50%;
           `}
         >
-          {content.paragraph_1}
-        </p>
+          <p>{content.paragraph_1}</p>
+        </div>
 
         <div
           css={css`

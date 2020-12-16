@@ -26,7 +26,6 @@ const About = ({ state }) => {
           justify-items: center;
           column-gap: 5vw;
           margin: 10vw;
-          z-index: 1;
 
           img {
             width: 100%;
