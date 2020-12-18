@@ -3,6 +3,7 @@ import { connect, css, styled } from "frontity";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import Footer from "./footer";
 
 const Services = ({ state }) => {
   //console.log(state);
@@ -12,8 +13,6 @@ const Services = ({ state }) => {
   //console.log(page);
   const content = page.acf;
   //console.log(content);
-
-  //document.querySelector(".serviceOne")
 
   const invert = (event) => {
     const clickedEl = event.target.parentElement;
@@ -141,6 +140,15 @@ const Services = ({ state }) => {
             grid-gap: 1em 5vw;
             min-height: 100vh;
             font-size: 40px;
+
+            @media only screen and (max-width: 768px) {
+              font-size: 32px;
+              padding: 3vw;
+            }
+
+            @media only screen and (max-width: 768px) {
+              font-size: 7vw;
+            }
           `}
         >
           <div
@@ -191,9 +199,13 @@ const Services = ({ state }) => {
             <div
               className="text textTwo"
               css={css`
-                font-size: 30px;
+                font-size: 25px;
                 opacity: 0;
                 pointer-events: none;
+
+                @media only screen and (max-width: 425px) {
+                  font-size: 5vw;
+                }
               `}
               dangerouslySetInnerHTML={{ __html: content.section_2 }}
             ></div>
@@ -213,17 +225,38 @@ const Services = ({ state }) => {
               css={css`
                 p {
                   margin: 0;
-                  font-size: 30px;
+                  font-size: 25px;
+                }
+
+                @media only screen and (max-width: 425px) {
+                  p {
+                    font-size: 5vw;
+                  }
                 }
               `}
               dangerouslySetInnerHTML={{ __html: content.section_1 }}
             ></div>
-            <div dangerouslySetInnerHTML={{ __html: content.tools_1 }}></div>
+            <div
+              css={css`
+                font-size: 25px;
+
+                @media only screen and (max-width: 425px) {
+                  font-size: 5vw;
+                }
+              `}
+              dangerouslySetInnerHTML={{ __html: content.tools_1 }}
+            ></div>
             <div
               css={css`
                 p {
                   margin: 0;
-                  font-size: 30px;
+                  font-size: 22px;
+                }
+
+                @media only screen and (max-width: 425px) {
+                  p {
+                    font-size: 4.5vw;
+                  }
                 }
               `}
               dangerouslySetInnerHTML={{ __html: content.section_3 }}
@@ -231,6 +264,7 @@ const Services = ({ state }) => {
           </div>
         </div>
       </Container>
+      <Footer />
     </>
   );
 };

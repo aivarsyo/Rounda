@@ -5,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import logo from "../images/logo.png";
 gsap.registerPlugin(ScrollTrigger);
 
-const Footer = ({ state }) => {
+const Footer = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
 
   const yellowSection = useRef(null);
@@ -66,17 +66,21 @@ const Footer = ({ state }) => {
             margin: 0;
             font-family: "gangsterRegular";
             font-size: 50px;
+
+            @media only screen and (max-width: 425px) {
+              font-size: 12vw;
+            }
           `}
         >
           Thank you for popping in.
         </p>
         <img src={logo} />
         <div>
-          <p>say hi to us on</p>
-          <p>mail@rounda.com</p>
-          <p>instagram</p>
-          <p>facebook</p>
-          <p>linkedIn</p>
+          <p>say hi! to us on</p>
+          <a href="mailto:mail@rounda.com">mail@rounda.com</a>
+          <a href="https://www.instagram.com/studio.rounda/">instagram</a>
+          <a href="https://www.facebook.com/studio.rounda">facebook</a>
+          <a href="https://www.linkedin.com/company/rounda">linkedIn</a>
         </div>
       </Container>
     </>
@@ -108,13 +112,50 @@ const Container = styled.footer`
     text-align: right;
     padding-right: 50px;
     padding-top: 100px;
+    display: flex;
+    flex-direction: column;
 
-    p {
-      margin: 0;
+    a {
+      position: static;
+      text-decoration: none;
+      color: black;
+      mix-blend-mode: normal;
     }
 
-    p:nth-of-type(1) {
-      margin-bottom: 10px;
+    a:nth-of-type(1) {
+      color: #4224d2;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    font-size: 4vw;
+
+    p {
+      grid-column: 1/2;
+      grid-row: 1/3;
+    }
+
+    img {
+      grid-column: 2/3;
+      grid-row: 2/3;
+    }
+
+    div {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      padding: 0;
+      text-align: left;
+      align-self: end;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    font-size: 6vw;
+
+    img {
+      width: 50vw;
     }
   }
 `;

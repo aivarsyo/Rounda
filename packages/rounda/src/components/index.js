@@ -7,6 +7,7 @@ import Works from "./works";
 import Empty from "./empty";
 import About from "./about";
 import Services from "./services";
+import SingleWork from "./singleWork";
 
 import gangsterRegular from "../fonts/gangstergrotesk-regular.ttf";
 import gangsterLight from "../fonts/gangstergrotesk-light.ttf";
@@ -37,6 +38,7 @@ const Theme = ({ state, actions }) => {
         <Works when={data.id == 35 && data.isReady} />
         <About when={data.id == 53 && data.isReady} />
         <Services when={data.id == 75 && data.isReady} />
+        <SingleWork when={data.isPost && data.isReady} />
       </Switch>
     </>
   );

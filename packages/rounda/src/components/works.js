@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { connect, styled, css } from "frontity";
 import Footer from "./footer";
+import Link from "./link";
 
 const Works = ({ state, actions }) => {
   //console.log(state);
@@ -26,7 +27,9 @@ const Works = ({ state, actions }) => {
         </p>
 
         <DivOne>
-          <img src={content.image_1} />
+          <Link href="/faccia-a-faccia">
+            <img src={content.image_1} />
+          </Link>
           <p>{content.paragraph_1}</p>
         </DivOne>
 
@@ -65,17 +68,33 @@ const Container = styled.main`
   flex-direction: column;
   padding-top: 15vh;
   padding-bottom: 15vh;
+
+  a {
+    position: static;
+    mix-blend-mode: normal;
+    z-index: initial;
+  }
+
+  div {
+    img {
+      width: 100%;
+    }
+  }
 `;
 
 const DivOne = styled.div`
   margin-left: 10vw;
   margin-top: 10vw;
+  width: 45vw;
+  max-width: 450px;
 `;
 
 const DivTwo = styled.div`
   align-self: flex-end;
   margin-right: 5vw;
   margin-top: 5vw;
+  width: 60vw;
+  max-width: 650px;
 `;
 
 const DivThree = styled.div`
@@ -83,10 +102,8 @@ const DivThree = styled.div`
   margin-top: 10vw;
   display: flex;
   flex-direction: column;
-
-  img {
-    width: 100%;
-  }
+  width: 60vw;
+  max-width: 650px;
 
   p {
     width: 70%;
@@ -102,9 +119,13 @@ const SubDivTwo = styled.div`
   align-self: flex-end;
   margin: 0;
   margin-top: 10vw;
+  width: 45vw;
+  max-width: 450px;
 `;
 
 const SubDivThree = styled.div`
   align-self: flex-start;
   margin-top: 10vw;
+  width: 45vw;
+  max-width: 450px;
 `;
