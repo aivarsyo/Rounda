@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import cursor from "../images/cursor.png";
 
 const Black = ({ state }) => {
   //console.log(state);
@@ -61,6 +62,11 @@ const Black = ({ state }) => {
 export default connect(Black);
 
 const Container = styled.div`
+
+img {
+  cursor: url(${cursor}), auto;
+}
+
   background-color: black;
   color: white;
   padding-bottom: 100px;

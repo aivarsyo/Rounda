@@ -3,7 +3,7 @@ import { connect, styled } from "frontity";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-import Link from "./link";
+import cursor from "../images/cursor.png";
 
 const Blue = ({ state }) => {
   //console.log(state);
@@ -106,6 +106,10 @@ const Container = styled.div`
     align-self: center;
     width: 60vw;
     max-width: 650px;
+
+    img {
+      cursor: url(${cursor}), auto;
+    }
   }
 
   div:nth-of-type(4) {
@@ -129,6 +133,10 @@ const Container = styled.div`
     margin-bottom: 100px;
     width: 60vw;
     max-width: 650px;
+
+    img {
+      cursor: url(${cursor}), auto;
+    }
   }
 
   @media only screen and (max-width: 768px) {

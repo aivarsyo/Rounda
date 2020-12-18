@@ -23,4 +23,9 @@ export default connect(Home);
 const Container = styled.main`
   display: flex;
   flex-direction: column;
+
+  img:hover {
+    filter: invert(20%) sepia(75%) saturate(6766%) hue-rotate(252deg)
+      brightness(89%) contrast(86%);
+  }
 `;

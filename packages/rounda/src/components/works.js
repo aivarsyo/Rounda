@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect, styled, css } from "frontity";
 import Footer from "./footer";
 import Link from "./link";
+import cursor from "../images/cursor.png";
 
 const Works = ({ state, actions }) => {
   //console.log(state);
@@ -48,7 +49,9 @@ const Works = ({ state, actions }) => {
         </DivOne>
 
         <DivTwo>
-          <img src={content.image_2} />
+          <a href="https://agne-portfolio.vercel.app/" target="_blank">
+            <img src={content.image_2} />
+          </a>
           <p>{content.paragraph_2}</p>
         </DivTwo>
 
@@ -92,6 +95,10 @@ const Container = styled.main`
   div {
     img {
       width: 100%;
+    }
+    img:hover {
+      filter: invert(20%) sepia(75%) saturate(6766%) hue-rotate(252deg)
+        brightness(89%) contrast(86%);
     }
   }
 `;
@@ -155,6 +162,10 @@ const DivThree = styled.div`
 const SubDivOne = styled.div`
   margin: 0;
   align-self: center;
+
+  img {
+    cursor: url(${cursor}), auto;
+  }
 `;
 
 const SubDivTwo = styled.div`
@@ -163,6 +174,10 @@ const SubDivTwo = styled.div`
   margin-top: 10vw;
   width: 45vw;
   max-width: 450px;
+
+  img {
+    cursor: url(${cursor}), auto;
+  }
 
   @media only screen and (max-width: 768px) {
     width: 55vw;
