@@ -102,6 +102,69 @@ const Container = styled.div`
     p:nth-of-type(2) {
       grid-row: 2/3;
       grid-column: 1/2;
+      width: 45vw;
+      max-width: 450px;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    div:nth-of-type(1) {
+      p {
+        width: 70%;
+        font-size: 30px;
+      }
+    }
+
+    div:nth-of-type(2) {
+      
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto;
+  
+      img {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        width: 55vw;
+       
+      }
+  
+      p:nth-of-type(1) {
+        grid-row: 3/4;
+        grid-column: 1/2;
+        font-size: 4vw;
+      }
+  
+      p:nth-of-type(2) {
+        grid-row: 2/3;
+        grid-column: 1/2;
+        width: 55vw;
+       
+      }
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+
+    div:nth-of-type(1) {
+      p {
+        
+        font-size: 10vw;
+      }
+    }
+    div:nth-of-type(2) {
+  
+      img {
+        width: 70vw;
+      }
+  
+      p:nth-of-type(1) {
+        font-size: 6vw;
+      }
+  
+      p:nth-of-type(2) {
+        width: 70vw;
+       
+      }
+    }
+  }
   }
 `;
