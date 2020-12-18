@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import Link from "./link";
 
 const Blue = ({ state }) => {
   //console.log(state);
@@ -33,7 +34,9 @@ const Blue = ({ state }) => {
     <>
       <Container ref={blueSection}>
         <div>
-          <img src={content.image_2} />
+          <a href="https://agne-portfolio.vercel.app/" target="_blank">
+            <img src={content.image_2} />
+          </a>
           <p>{content.paragraph_2}</p>
         </div>
 
@@ -51,7 +54,9 @@ const Blue = ({ state }) => {
         </div>
 
         <div>
-          <img src={content.image_4} />
+          <a href="https://facciafaccia.com/" target="_blank">
+            <img src={content.image_4} />
+          </a>
           <p>{content.paragraph_4}</p>
         </div>
 
@@ -70,6 +75,12 @@ const Container = styled.div`
   background-color: #e7e9f2;
   display: flex;
   flex-direction: column;
+
+  a {
+    position: static;
+    z-index: initial;
+    mix-blend-mode: normal;
+  }
 
   div {
     img {

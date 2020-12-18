@@ -44,6 +44,11 @@ const About = ({ state }) => {
           p:nth-of-type(1) {
             font-size: 18px;
           }
+
+          @media only screen and (max-width: 425px) {
+            margin-left: 3vw;
+            margin-right: 3vw;
+          }
         `}
       >
         <div>

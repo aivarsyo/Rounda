@@ -2,18 +2,18 @@
   "errors": [],
   "warnings": [],
   "version": "4.44.2",
-  "hash": "a1da5493797188f62ab5",
+  "hash": "c343279b2d44c5bae13c",
   "publicPath": "/static/",
   "outputPath": "C:\\Users\\Aivars\\Desktop\\Local Sites\\Rounda-node\\build\\static",
   "assetsByChunkName": {
     "rounda": [
       "rounda.module.js",
-      "rounda.9eadc4edb20822be2b16.hot-update.js"
+      "rounda.3810b17c34261adee4e6.hot-update.js"
     ]
   },
   "assets": [
     {
-      "name": "9eadc4edb20822be2b16.hot-update.json",
+      "name": "3810b17c34261adee4e6.hot-update.json",
       "size": 48,
       "chunks": [],
       "chunkNames": [],
@@ -64,8 +64,8 @@
       "emitted": false
     },
     {
-      "name": "rounda.9eadc4edb20822be2b16.hot-update.js",
-      "size": 17861,
+      "name": "rounda.3810b17c34261adee4e6.hot-update.js",
+      "size": 99443,
       "chunks": [
         "rounda"
       ],
@@ -80,7 +80,7 @@
     },
     {
       "name": "rounda.module.js",
-      "size": 9521890,
+      "size": 9544974,
       "chunks": [
         "rounda"
       ],
@@ -99,7 +99,7 @@
       ],
       "assets": [
         "rounda.module.js",
-        "rounda.9eadc4edb20822be2b16.hot-update.js"
+        "rounda.3810b17c34261adee4e6.hot-update.js"
       ],
       "children": {},
       "childAssets": {}
@@ -112,7 +112,7 @@
       ],
       "assets": [
         "rounda.module.js",
-        "rounda.9eadc4edb20822be2b16.hot-update.js"
+        "rounda.3810b17c34261adee4e6.hot-update.js"
       ],
       "children": {},
       "childAssets": {}

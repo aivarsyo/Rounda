@@ -22,6 +22,10 @@ const About = ({ state }) => {
           css={css`
             align-self: flex-end;
             width: 50%;
+
+            @media only screen and (max-width: 768px) {
+              width: 70%;
+            }
           `}
         >
           <p>{content.paragraph_1}</p>
@@ -35,13 +39,17 @@ const About = ({ state }) => {
             margin-top: 10vw;
             color: #f7f7a8;
             font-family: "gangsterRegular";
+
+            @media only screen and (max-width: 768px) {
+              grid-template-columns: 1fr;
+            }
           `}
         >
           <div
             css={css`
               pointer-events: none;
               overflow: hidden;
-              width: 100vw;
+              width: 100%;
               height: 100vw;
               max-width: 440px;
               max-height: 585px;

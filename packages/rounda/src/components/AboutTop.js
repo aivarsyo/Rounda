@@ -37,6 +37,10 @@ const About = ({ state }) => {
           css={css`
             display: flex;
             flex-direction: row;
+
+            @media only screen and (max-width: 768px) {
+              flex-direction: column;
+            }
           `}
         >
           <p
@@ -44,6 +48,11 @@ const About = ({ state }) => {
               margin-left: 5vw;
               margin-right: 10vw;
               width: 40%;
+
+              @media only screen and (max-width: 768px) {
+                width: 60%;
+                margin-right: 0;
+              }
             `}
           >
             {content.title_1}
@@ -57,6 +66,12 @@ const About = ({ state }) => {
               height: 100vw;
               max-width: 440px;
               max-height: 446px;
+
+              @media only screen and (max-width: 768px) {
+                margin-right: 0;
+                width: 80vw;
+                align-self: center;
+              }
             `}
           >
             <Iframe
@@ -79,17 +94,36 @@ const About = ({ state }) => {
             margin-top: 20vh;
             margin-bottom: 20vh;
             margin-left: 5vw;
+
+            @media only screen and (max-width: 768px) {
+              margin-left: 0;
+              grid-template-columns: 1fr;
+            }
           `}
         >
-          <p>{content.title_2}</p>
+          <p
+            css={css`
+              @media only screen and (max-width: 768px) {
+                width: 70%;
+                margin-left: 5vw;
+              }
+            `}
+          >
+            {content.title_2}
+          </p>
           <div
             css={css`
               pointer-events: none;
               overflow: hidden;
-              width: 100vw;
+              width: 100%;
               height: 100vw;
               max-width: 640px;
               max-height: 346px;
+
+              @media only screen and (max-width: 768px) {
+                justify-self: center;
+                max-width: 100%;
+              }
             `}
           >
             <Iframe
