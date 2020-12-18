@@ -71,12 +71,16 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
+  div {
+    img {
+      width: 100%;
+    }
+  }
+
   div:nth-of-type(1) {
     align-self: flex-end;
-
-    p {
-      width: 50%;
-    }
+    width: 60vw;
+    max-width: 650px;
   }
 
   div:nth-of-type(2) {
@@ -89,6 +93,8 @@ const Container = styled.div`
 
   div:nth-of-type(3) {
     align-self: center;
+    width: 60vw;
+    max-width: 650px;
   }
 
   div:nth-of-type(4) {
@@ -102,11 +108,15 @@ const Container = styled.div`
   div:nth-of-type(5) {
     align-self: flex-end;
     margin-right: 10vw;
+    width: 45vw;
+    max-width: 450px;
   }
 
   div:nth-of-type(6) {
     align-self: flex-start;
     margin-top: 100px;
     margin-bottom: 100px;
+    width: 60vw;
+    max-width: 650px;
   }
 `;

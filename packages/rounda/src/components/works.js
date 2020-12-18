@@ -17,10 +17,24 @@ const Works = ({ state, actions }) => {
       <Container className="main">
         <p
           css={css`
-            font-size: 30px;
-            width: 30%;
+            font-size: 50px;
+            width: 40%;
             align-self: flex-end;
             margin-right: 10vw;
+            margin-top: 0;
+
+            @media only screen and (max-width: 768px) {
+              align-self: center;
+              width: 80%;
+              margin-right: 10vw;
+              margin-left: 10vw;
+              font-size: 70px;
+            }
+
+            @media only screen and (max-width: 425px) {
+              margin-top: 0;
+              font-size: 17vw;
+            }
           `}
         >
           {content.title_1}
@@ -87,6 +101,15 @@ const DivOne = styled.div`
   margin-top: 10vw;
   width: 45vw;
   max-width: 450px;
+
+  @media only screen and (max-width: 768px) {
+    margin-left: 0;
+    width: 55vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    width: 70vw;
+  }
 `;
 
 const DivTwo = styled.div`
@@ -95,6 +118,16 @@ const DivTwo = styled.div`
   margin-top: 5vw;
   width: 60vw;
   max-width: 650px;
+
+  @media only screen and (max-width: 768px) {
+    width: 65vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    width: 100vw;
+    margin-right: 0;
+    margin-top: 10vh;
+  }
 `;
 
 const DivThree = styled.div`
@@ -107,6 +140,15 @@ const DivThree = styled.div`
 
   p {
     width: 70%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 65vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    margin-top: 10vh;
+    width: 100vw;
   }
 `;
 
@@ -121,6 +163,14 @@ const SubDivTwo = styled.div`
   margin-top: 10vw;
   width: 45vw;
   max-width: 450px;
+
+  @media only screen and (max-width: 768px) {
+    width: 55vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    width: 70vw;
+  }
 `;
 
 const SubDivThree = styled.div`
@@ -128,4 +178,12 @@ const SubDivThree = styled.div`
   margin-top: 10vw;
   width: 45vw;
   max-width: 450px;
+
+  @media only screen and (max-width: 768px) {
+    width: 55vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    width: 70vw;
+  }
 `;

@@ -85,6 +85,8 @@ const Container = styled.div`
     img {
       grid-row: 1/2;
       grid-column: 1/2;
+      width: 45vw;
+      max-width: 450px;
     }
 
     p:nth-of-type(1) {
